@@ -43,8 +43,20 @@ function traverseSurveyData() {
   // Count the number of "No" responses,
   // Count the number of "Maybe" responses,
   // and output the results in the outputEl.
-
-  outputEl.innerHTML = "Survey Data";
+  let countY = 0;
+  let countN = 0;
+  let countM = 0;
+  outputEl.innerHTML = "";
+  for (let n = 0; n < surveyData.length; n++) {
+    if (surveyData[n] === "Yes") {
+      countY++;
+    } else if (surveyData[n] === "No") {
+      countN++;
+    } else if (surveyData[n] === "Maybe") {
+      countM++;
+    }
+  }
+  outputEl.innerHTML = `Yes: ${countY} <br> No: ${countN} <br> Maybe: ${countM}`;
   console.log(surveyData);
 }
 
@@ -55,8 +67,23 @@ function traverseAgeData() {
   // Count the number of ages between 36 and 65, inclusive
   // Count the number of ages above 65,
   // and output the results in the outputEl.
-
-  outputEl.innerHTML = "Age Data";
+  let countY = 0;
+  let countA = 0;
+  let countM = 0;
+  let countO = 0;
+  for (let n = 0; n < ageData.length; n++) {
+    if (ageData[n] < 18) {
+      countY++;
+    } else if (ageData[n] <= 35) {
+      countA++;
+    } else if (ageData[n] <= 65) {
+      countM++;
+    } else if (ageData[n] > 65) {
+      countO++;
+    }
+  }
+  console.log(countY, countA, countM, countO);
+  outputEl.innerHTML = `Under 18: ${countY} <br> 18 to 35: ${countA} <br> 36 to 65: ${countM} <br> Above 65: ${countO}`;
   console.log(ageData);
 }
 
