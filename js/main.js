@@ -92,7 +92,19 @@ function traverseNumberData() {
   // Count the number of even numbers,
   // Count the number of odd numbers,
   // and output the results in the outputEl.
+  CountO = 0;
+  CountE = 0;
 
-  outputEl.innerHTML = "Number Data";
+  for (let n = 0; n < numberData.length; n++) {
+    if (numberData[n][0] === "-") {
+      if(numberData[n][0] === "0" || "2" || "4" ||){
+        
+      }
+    } else if (numberData[n] === "-1") {
+      CountO++;
+    }
+  }
+  console.log(CountE, CountO);
+  outputEl.innerHTML = `Even numbers: ${CountE} <br> Odd numbers: ${CountO}`;
   console.log(numberData);
 }
