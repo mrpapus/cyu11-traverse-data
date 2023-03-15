@@ -97,11 +97,8 @@ function traverseNumberData() {
 
   for (let n = 0; n < numberData.length; n++) {
     if (numberData[n][0] === "-") {
-      if(numberData[n][0] === "0" || "2" || "4" ||){
-        
-      }
-    } else if (numberData[n] === "-1") {
-      CountO++;
+    } else if (numberData[n] === 0) {
+      CountE++;
     }
   }
   console.log(CountE, CountO);
