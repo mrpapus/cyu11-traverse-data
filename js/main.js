@@ -96,12 +96,13 @@ function traverseNumberData() {
   CountE = 0;
 
   for (let n = 0; n < numberData.length; n++) {
-    if (numberData[n][0] === "-") {
-    } else if (numberData[n] === 0) {
+    let value = numberData[n];
+    if (value % 2 === 0) {
       CountE++;
+    } else {
+      CountO++;
     }
   }
-  console.log(CountE, CountO);
   outputEl.innerHTML = `Even numbers: ${CountE} <br> Odd numbers: ${CountO}`;
   console.log(numberData);
 }
